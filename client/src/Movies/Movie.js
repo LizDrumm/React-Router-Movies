@@ -5,7 +5,7 @@ import { useParams} from 'react-router-dom'
 
 export default function Movie(props) {
   const [movie, setMovie] = useState();
-  //const {url, path} = useRouteMatch()
+
 
 const {id}= useParams()
 

@@ -1,18 +1,16 @@
 import React from 'react';
-import axios from 'axios';
-import { Link, Route } from 'react-router-dom';
-import { useRouteMatch } from 'react-router-dom'
-import MovieCard from './MovieCard'
-import Movie from './Movie'
+import { Link} from 'react-router-dom';
+
 
 export default function MovieList(props) {
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
-         <Link to={`/movies/${movie.id}`}     
+        <Link to={`/movies/${movie.id}`}
          style={{ textDecoration: 'none', color: 'black'}}>       
         <MovieDetails key={movie.id} movie={movie} />
-        </Link> /*dont get this!*/
+      </Link>
+      /*dont get this!*/
       ))}
     </div>
   );
@@ -23,7 +21,6 @@ function MovieDetails(props) {
 
   return (
     <div className="movie-card">
-    
       <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
@@ -31,6 +28,7 @@ function MovieDetails(props) {
       <div className="movie-metascore">
         Metascore: <strong>{metascore}</strong>
       </div>
+  
     </div>
   );
 }

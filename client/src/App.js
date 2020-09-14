@@ -5,7 +5,6 @@ import SavedList from './Movies/SavedList';
 
 
 import Movie from './Movies/Movie'
-import MovieCard from './Movies/MovieCard'
 import MovieList from './Movies/MovieList'
 
 
