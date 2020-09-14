@@ -9,7 +9,10 @@ export default function MovieList(props) {
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
+         <Link to={`/movies/${movie.id}`}     
+         style={{ textDecoration: 'none', color: 'black'}}>       
         <MovieDetails key={movie.id} movie={movie} />
+        </Link> /*dont get this!*/
       ))}
     </div>
   );
@@ -17,7 +20,6 @@ export default function MovieList(props) {
 
 function MovieDetails(props) {
   const { title, director, metascore } = props.movie;
-  const {url, path} = useRouteMatch()
 
   return (
     <div className="movie-card">
