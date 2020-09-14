@@ -1,4 +1,9 @@
 import React from 'react';
+import axios from 'axios';
+import { Link, Route } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom'
+import MovieCard from './MovieCard'
+import Movie from './Movie'
 
 export default function MovieList(props) {
   return (
@@ -12,9 +17,11 @@ export default function MovieList(props) {
 
 function MovieDetails(props) {
   const { title, director, metascore } = props.movie;
+  const {url, path} = useRouteMatch()
 
   return (
     <div className="movie-card">
+    
       <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
