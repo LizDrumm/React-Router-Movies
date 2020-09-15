@@ -10,6 +10,7 @@ import MovieList from './Movies/MovieList'
 
 export default function App () {
   //const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
+  
   const [movieList, setMovieList] = useState([]);
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function App () {
         .then(response => {
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
-          setMovieList(response.data);
+          setMovieList(response.data); //set response to state
         })
         .catch(error => {
           console.error('Server Error', error);
@@ -35,12 +36,12 @@ export default function App () {
   return (
     <div>
       <SavedList list={[ /* This is stretch */]} />
-      <div>
+      
 
       <Switch> {/* when using switch just '/' goes last and you don't use exact */}
       
       <Route path='/movies/:id'> 
-      <Movie movies={movieList}/>
+      <Movie movies={movieList} />
       </Route>
      
 
@@ -50,7 +51,7 @@ export default function App () {
 
       </Switch>
 
-      </div>
+    
     </div>
   );
 }

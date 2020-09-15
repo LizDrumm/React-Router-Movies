@@ -8,7 +8,7 @@ export default function Movie(props) {
 
 
 const {id}= useParams()
-
+//useParams returns an object of key/value pairs of URL parameters.
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const {id}= useParams()
       });
     // This effect should run every time time
     // the `id` changes... How could we do this?
-  }, []);
+  }, [id]); 
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => { }
